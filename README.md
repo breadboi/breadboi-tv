@@ -9,6 +9,14 @@ My personal website for all things streaming and social. You may view the live s
 - Gulp
 - config.json ( For config.go )
 
+## config.json
+```
+{
+  "port" : <port>,
+  "mode  : <debug/release>
+}
+```
+
 ## Startup
 
 ```bash
