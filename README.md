@@ -13,7 +13,7 @@ My personal website for all things streaming and social. You may view the live s
 ```
 {
   "port" : <port>,
-  "mode  : <debug/release>
+  "mode" : <debug/release>
 }
 ```
 
