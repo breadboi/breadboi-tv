@@ -6,7 +6,8 @@
   "dependencies": {
     "animejs": "^3.2.0",
     "babel-core": "^6.26.3",
-    "babel-plugin-transform-react-jsx": "^6.24.1"
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "query-string": "^6.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
