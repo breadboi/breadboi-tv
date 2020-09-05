@@ -10,7 +10,6 @@
 package main
 
 import (
-	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -31,8 +30,14 @@ func SetupRouter() *gin.Engine {
 
 	router := gin.Default()
 
-	// Serve frontend static files
-	router.Use(static.Serve("/", static.LocalFile("public", true)))
+	// Serve resources
+	router.Static("/public", "public")
+
+	// Serve homepage
+	router.StaticFile("/", "public/views/home.html")
+
+	// Serve squad
+	router.StaticFile("/squad", "public/views/squad.html")
 
 	return router
 }

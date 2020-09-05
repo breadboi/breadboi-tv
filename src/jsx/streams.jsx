@@ -9,53 +9,62 @@
  */
 
 class Streams extends React.Component {
+    constructor(props) {
+        super(props);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const streamsParam = urlParams.get('streams');        
+
+        const queryStreams = streamsParam.split(',');
+        
+        this.state = {
+            streams: queryStreams
+        };
+    }
+
     render() {
         return (
+
             <div className="stream-section">
                 <div className="gird grid-pad">
-
-                    <div className="row text-center">
-                        <div className="col section-header white-heading">
-                            <h2>Pokemon Black/White | Bread boi vs Pickels</h2>
-                        </div>
-                    </div>
-
                     <div className="row streams-row">
-
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div className="card bg-dark project-card shadow">
-                                <div className="card-body">
-                                    <iframe src="https://player.twitch.tv/?channel=imbreadboi&parent=localhost" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
-                                    <iframe frameborder="0"
-                                        scrolling="no"
-                                        id="chat_embed"
-                                        src="https://www.twitch.tv/embed/imbreadboi/chat?parent=localhost"
-                                        height="500"
-                                        width="100%">
-                                    </iframe>
-                                </div>
-                            </div>
+                        <div className="row">
+                            {this.state.streams.map(function (stream, i) {
+                                return <Stream key={i} stream={stream} />;
+                            })}
                         </div>
-
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div className="card bg-dark project-card shadow">
-                                <div className="card-body">
-                                    <iframe src="https://player.twitch.tv/?channel=pickels1481&parent=localhost" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
-                                    <iframe frameborder="0"
-                                        scrolling="no"
-                                        id="chat_embed"
-                                        src="https://www.twitch.tv/embed/pickels1481/chat?parent=localhost"
-                                        height="500"
-                                        width="100%">
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
             </div>
+
+        );
+    }
+}
+
+class Stream extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+
+            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div className="card bg-dark project-card shadow">
+                    <div className="card-body">
+                        <iframe src={"https://player.twitch.tv/?channel=" + this.props.stream + "&parent=" + location.hostname} frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+                        <iframe frameborder="0"
+                            scrolling="no"
+                            id="chat_embed"
+                            src={"https://www.twitch.tv/embed/" + this.props.stream + "/chat?parent=" + location.hostname}
+                            height="500"
+                            width="100%">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
         );
     }
 }
