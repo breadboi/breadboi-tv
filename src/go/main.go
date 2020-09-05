@@ -16,26 +16,23 @@ import (
 
 func main() {
 
-	config := LoadConfiguration("../../config.json")
+	config := LoadConfiguration("config.json")
 
 	gin.SetMode(config.Mode)
 
-	router := setupRouter()
+	router := SetupRouter()
 
 	// Listen and Serve
 	router.Run(config.Port)
 }
 
-/**
- * @brief Gin router setup for github api and our
- * public static files
- */
-func setupRouter() *gin.Engine {
+// SetupRouter Sets up our gin router
+func SetupRouter() *gin.Engine {
 
 	router := gin.Default()
 
 	// Serve frontend static files
-	router.Use(static.Serve("/", static.LocalFile("../../public", true)))
+	router.Use(static.Serve("/", static.LocalFile("public", true)))
 
 	return router
 }
