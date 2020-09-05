@@ -15,18 +15,13 @@ import (
 	"os"
 )
 
-// Represents our config file
+// Config options
 type Config struct {
 	Port string `json:"port"`
 	Mode string `json:"mode"`
 }
 
-/**
- * @brief Handles reading our config file and returning
- * a Config object that represents the file's contents.
- * 
- * @param file Represents the filepath to config.json
- */
+// LoadConfiguration Loads the configuration file from a path
 func LoadConfiguration(file string) Config {
 	var config Config
 
