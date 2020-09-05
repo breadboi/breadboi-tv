@@ -13,10 +13,10 @@ class Streams extends React.Component {
         super(props);
 
         const urlParams = new URLSearchParams(window.location.search);
-        const streamsParam = urlParams.get('streams');        
+        const streamsParam = urlParams.get('streams');
 
         const queryStreams = streamsParam.split(',');
-        
+
         this.state = {
             streams: queryStreams
         };
@@ -28,11 +28,9 @@ class Streams extends React.Component {
             <div className="stream-section">
                 <div className="gird grid-pad">
                     <div className="row streams-row">
-                        <div className="row">
-                            {this.state.streams.map(function (stream, i) {
-                                return <Stream key={i} stream={stream} />;
-                            })}
-                        </div>
+                        {this.state.streams.map(function (stream, i) {
+                            return <Stream key={i} stream={stream} />;
+                        })}
                     </div>
                 </div>
             </div>
@@ -51,7 +49,7 @@ class Stream extends React.Component {
         return (
 
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div className="card bg-dark project-card shadow">
+                <div className="card bg-dark shadow stream-card">
                     <div className="card-body">
                         <iframe src={"https://player.twitch.tv/?channel=" + this.props.stream + "&parent=" + location.hostname} frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                         <iframe frameborder="0"
