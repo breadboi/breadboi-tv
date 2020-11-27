@@ -13,7 +13,9 @@ class Header extends React.Component {
       <div className="grid grid-pad">
 
         <div className="row text-center">
-          <img id="twitch_logo" src="public/assets/channel-logo.png" alt="Avatar" className="circular shadow-lg" />
+          <div className="circular shadow-lg">
+            <img id="twitch_logo" src="public/assets/channel-logo.png" alt="Avatar" className="bread-logo" />
+          </div>          
         </div>
 
         <div className="row text-center">

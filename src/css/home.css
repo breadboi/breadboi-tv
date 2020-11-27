@@ -27,6 +27,12 @@ body {
   background-color: #653fac;
 }
 
+.bread-logo {
+  width: 210%;
+  margin-top: -61px;
+  margin-left: -165px;
+}
+
 .white-heading {
   color: white;
 }
