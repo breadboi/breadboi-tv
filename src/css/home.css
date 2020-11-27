@@ -41,6 +41,20 @@ body {
   margin-bottom: 25px;
 }
 
+/* Main Content */
+.main-content-row {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.twitter-dark {
+  background-color: #292F33;
+}
+
+.content-item {
+  margin-bottom: 30px;
+}
+
 /* Streams Styling */
 .stream-section {
   background-color: #653fac;
