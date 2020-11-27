@@ -20,6 +20,30 @@ gulp.task('vendor', function() {
 });
 
 /**
+ * Move views
+ */
+gulp.task('views', function() {
+    return gulp.src("src/views/*")
+        .pipe(gulp.dest("public/views"));
+})
+
+/**
+ * Move css
+ */
+gulp.task('css', function() {
+    return gulp.src("src/css/*")
+        .pipe(gulp.dest("public/css"));
+})
+
+/**
+ * Move assets
+ */
+gulp.task('assets', function() {
+    return gulp.src("src/assets/*")
+        .pipe(gulp.dest("public/assets"));
+})
+
+/**
  * Minify react js files
  */
 gulp.task('minify-react', function() {
@@ -58,4 +82,4 @@ gulp.task('build-debug', gulp.series('babel', 'copy-js', 'vendor'));
 /**
  * Build with all src minified
  */
-gulp.task('build-release', gulp.series('babel', 'minify-all', 'vendor'));
+gulp.task('build-release', gulp.series('babel', 'minify-all', 'vendor', 'assets', 'css', 'views'));

@@ -27,12 +27,32 @@ body {
   background-color: #653fac;
 }
 
+.bread-logo {
+  width: 210%;
+  margin-top: -61px;
+  margin-left: -165px;
+}
+
 .white-heading {
   color: white;
 }
 
 .section-header {
   margin-bottom: 25px;
+}
+
+/* Main Content */
+.main-content-row {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.twitter-dark {
+  background-color: #292F33;
+}
+
+.content-item {
+  margin-bottom: 30px;
 }
 
 /* Streams Styling */
