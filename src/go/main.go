@@ -39,5 +39,8 @@ func SetupRouter() *gin.Engine {
 	// Serve squad
 	router.StaticFile("/squad", "public/views/squad.html")
 
+	// Serve pokemon
+	router.StaticFile("/pokemon", "public/views/pokemon.html")
+
 	return router
 }
