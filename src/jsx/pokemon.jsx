@@ -60,7 +60,7 @@ class Streams extends React.Component {
                                     <iframe frameborder="0"
                                         scrolling="no"
                                         id="chat_embed"
-                                        src={"http://www.twitch.tv/embed/" + this.state.pickels.channel + "/chat?parent=" + location.hostname}
+                                        src={"https://www.twitch.tv/embed/" + this.state.pickels.channel + "/chat?parent=" + location.hostname}
                                         height="500"
                                         width="100%">
                                     </iframe>
