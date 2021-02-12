@@ -19,6 +19,7 @@ import (
 type Config struct {
 	Port string `json:"port"`
 	Mode string `json:"mode"`
+	API  string `json:"api"`
 }
 
 // LoadConfiguration Loads the configuration file from a path
