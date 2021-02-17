@@ -12,10 +12,18 @@ gulp.task('babel', function() {
 });
 
 /**
- * Move vendor js scripts
+ * Move moment js scripts
  */
-gulp.task('vendor', function() {
-    return gulp.src("src/vendor/*.js")
+gulp.task('moment', function() {
+    return gulp.src("node_modules/moment/min/moment.min.js")
+        .pipe(gulp.dest("public/vendor/"));
+});
+
+/**
+ * Move moment timezone scripts
+ */
+gulp.task('moment-tz', function() {
+    return gulp.src("node_modules/moment-timezone/moment-timezone.js")
         .pipe(gulp.dest("public/vendor/"));
 });
 
@@ -77,9 +85,9 @@ gulp.task('copy-js', function() {
 /**
  * Build with all src unminified
  */
-gulp.task('build-debug', gulp.series('babel', 'copy-js', 'vendor'));
+gulp.task('build-debug', gulp.series('babel', 'copy-js', 'moment', 'moment-tz'));
 
 /**
  * Build with all src minified
  */
-gulp.task('build-release', gulp.series('babel', 'minify-all', 'vendor', 'assets', 'css', 'views'));
+gulp.task('build-release', gulp.series('babel', 'minify-all', 'moment', 'moment-tz', 'assets', 'css', 'views'));

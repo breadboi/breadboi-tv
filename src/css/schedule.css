@@ -14,6 +14,10 @@ body {
     padding-bottom: 50px;
 }
 
+.current-timeslot {
+    background: #4FDF4F;
+}
+
 button,
 input,
 select,

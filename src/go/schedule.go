@@ -15,7 +15,7 @@ import (
 	"os"
 )
 
-// Schedule - This is a test
+// Schedule - Represents a Stream Schedule
 type Schedule struct {
 	Days []struct {
 		Date        string `json:"Date"`
@@ -23,7 +23,6 @@ type Schedule struct {
 		GameType    string `json:"GameType"`
 		Duration    string `json:"Duration"`
 		Description string `json:"Description"`
-		StartTime   string `json:"StartTime"`
 	} `json:"Days"`
 }
 

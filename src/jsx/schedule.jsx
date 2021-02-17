@@ -30,14 +30,30 @@ class Schedule extends React.Component {
 
     render() {
 
+        // convert utc time to local time
+        function convertUTCToLocal(timeToConvert) {
+            var easternTime = moment.tz(timeToConvert, 'YYYY-MM-DD h:mm:ss a', 'America/Chicago');
+            var localDate = easternTime.clone(easternTime).tz(moment.tz.guess());
+            return localDate;
+        }
+
+        function isWithinTimeSlot(startTime, duration) {
+            var currentTime = moment().tz(moment.tz.guess());
+            var initialTime = moment.tz(startTime, 'YYYY-MM-DD h:mm:ss a', 'America/Chicago');
+            var endTime = moment(initialTime);
+            endTime.add(duration, 'hours');
+
+            return currentTime.isBetween(initialTime, endTime);
+        }
+
         var scheduledGames = this.state.streamSchedule.map(currentDay => {
             return (
-                <tr>
-                    <td>{currentDay.Date}</td>
+                <tr className={isWithinTimeSlot(currentDay.Date, currentDay.Duration) ? "current-timeslot" : "timeslot"}>
+                    <td>{convertUTCToLocal(currentDay.Date).format('MMM DD')}</td>
                     <td>{currentDay.Title}</td>
                     <td>{currentDay.GameType}</td>
                     <td> <i class="fa fa-clock-o text-white" aria-hidden="true"></i> {currentDay.Duration} </td>
-                    <td> <i class="fa fa-clock-o" aria-hidden="true"></i> {currentDay.StartTime} </td>
+                    <td> <i class="fa fa-clock-o" aria-hidden="true"></i> {convertUTCToLocal(currentDay.Date).format('hh:mm A z')} </td>
                     <td>{currentDay.Description}</td>
                 </tr>
             )
@@ -50,7 +66,7 @@ class Schedule extends React.Component {
                         <i className="fa fa-circle fa-stack-2x"></i> <i className="fa fa-clock-o fa-stack-1x fa-inverse"></i>
                     </div>
                     <h1 className="text-gdq-red extra-spacing">Bread boi's 24hr Stream Schedule</h1>
-                    <h4 className="text-gdq-black well ">All start and end times below are converted to your local time<span id="offset-detected"> (detected as UTC-06:00)</span>.</h4>
+                    <h4 className="text-gdq-black well ">All start times below are converted to your local time<span id="offset-detected"> ({moment.tz.guess()})</span>.</h4>
                 </div>
 
                 <table id="runTable" className="table table-condensed">
