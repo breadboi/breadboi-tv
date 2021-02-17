@@ -64,18 +64,25 @@ func SetupRouter() *gin.Engine {
 
 // UploadScheduleHandler - Handles the /uploadschedule api call
 func UploadScheduleHandler(c *gin.Context) {
-	body, err := ioutil.ReadAll(c.Request.Body)
+	config := LoadConfiguration("config.json")
 
-	if err != nil {
-		c.String(http.StatusBadRequest, "Cannot read response body")
-	}
+	if c.Request.Header.Get("api-key") == config.API {
 
-	err = ioutil.WriteFile("./uploaded-files/schedule.json", body, 0644)
+		body, err := ioutil.ReadAll(c.Request.Body)
 
-	if err != nil {
-		c.String(http.StatusBadRequest, "Write Failed...")
+		if err != nil {
+			c.String(http.StatusBadRequest, "Cannot read response body")
+		}
+
+		err = ioutil.WriteFile("./uploaded-files/schedule.json", body, 0644)
+
+		if err != nil {
+			c.String(http.StatusBadRequest, "Write Failed...")
+		} else {
+			c.String(http.StatusOK, "Successful Upload...")
+		}
 	} else {
-		c.String(http.StatusOK, "Successful Upload...")
+		c.String(http.StatusUnauthorized, "Your api key is invalid...")
 	}
 }
 

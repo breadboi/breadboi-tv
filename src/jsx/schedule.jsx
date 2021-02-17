@@ -30,13 +30,21 @@ class Schedule extends React.Component {
 
     render() {
 
-        // convert utc time to local time
+        /**
+         * Converts a time to the client local time
+         * @param {string} timeToConvert String should be in this format YYYY-MM-DD h:mm:ss a
+         */
         function convertUTCToLocal(timeToConvert) {
             var easternTime = moment.tz(timeToConvert, 'YYYY-MM-DD h:mm:ss a', 'America/Chicago');
             var localDate = easternTime.clone(easternTime).tz(moment.tz.guess());
             return localDate;
         }
 
+        /**
+         * Check if a time is between a start and a duration.
+         * @param {string} startTime String should be in this format YYYY-MM-DD h:mm:ss a
+         * @param {string} duration String should be in this format hh:mm:ss
+         */
         function isWithinTimeSlot(startTime, duration) {
             var currentTime = moment().tz(moment.tz.guess());
             var initialTime = moment.tz(startTime, 'YYYY-MM-DD h:mm:ss a', 'America/Chicago');
@@ -52,8 +60,8 @@ class Schedule extends React.Component {
                     <td>{convertUTCToLocal(currentDay.Date).format('MMM DD')}</td>
                     <td>{currentDay.Title}</td>
                     <td>{currentDay.GameType}</td>
-                    <td> <i class="fa fa-clock-o text-white" aria-hidden="true"></i> {currentDay.Duration} </td>
-                    <td> <i class="fa fa-clock-o" aria-hidden="true"></i> {convertUTCToLocal(currentDay.Date).format('hh:mm A z')} </td>
+                    <td> <i class="fa fa-clock-o" aria-hidden="true"></i> {currentDay.Duration} </td>
+                    <td> {convertUTCToLocal(currentDay.Date).format('hh:mm A z')} </td>
                     <td>{currentDay.Description}</td>
                 </tr>
             )
