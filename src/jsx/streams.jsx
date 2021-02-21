@@ -59,11 +59,6 @@ class Stream extends React.Component {
                             height="500"
                             width="100%">
                         </iframe>
-                        <iframe src={"https://pokelink.cybershade.org/themes/default/index.html?user=" + this.props.stream + "&server=localhost&port=3000"} 
-                            frameBorder="0"
-                            height="378"
-                            width="100%">
-                        </iframe>
                     </div>
                 </div>
             </div>
