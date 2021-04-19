@@ -13,12 +13,14 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"breadboi.tv/utility"
+
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 
-	config := LoadConfiguration("config.json")
+	config := utility.LoadConfiguration("config.json")
 
 	gin.SetMode(config.Mode)
 
@@ -64,7 +66,7 @@ func SetupRouter() *gin.Engine {
 
 // UploadScheduleHandler - Handles the /uploadschedule api call
 func UploadScheduleHandler(c *gin.Context) {
-	config := LoadConfiguration("config.json")
+	config := utility.LoadConfiguration("config.json")
 
 	if c.Request.Header.Get("api-key") == config.API {
 
@@ -89,7 +91,7 @@ func UploadScheduleHandler(c *gin.Context) {
 // ScheduleHandler - Handles the /schedule api call
 func ScheduleHandler(c *gin.Context) {
 
-	schedule := GetSchedule()
+	schedule := utility.GetSchedule()
 
 	c.Header("Content-Type", "application/json")
 
