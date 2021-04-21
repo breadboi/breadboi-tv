@@ -1,0 +1,86 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #3f2869;
+}
+
+/* Streams Styling */
+.bingo-section {
+    background-color: #a986ea;
+    font-size: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Bingo display */
+.bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px
+}
+
+.bingo-grid>.blank {
+    padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: #333;
+}
+
+/* Profile Picture Styling */
+
+.orange {
+    padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: orange;
+}
+
+.red {
+    padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: orangered;
+}
+
+.blue {
+    padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: lightskyblue;
+}
+
+.green {
+    padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: green;
+}
+
+.purple {
+    padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: rgb(155, 76, 155);
+}

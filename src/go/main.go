@@ -59,6 +59,7 @@ func SetupRouter() *gin.Engine {
 		})
 		api.POST("/uploadschedule", UploadScheduleHandler)
 		api.GET("/schedule", ScheduleHandler)
+		api.GET("/bingo", BingoHandler)
 	}
 
 	return router
@@ -96,4 +97,14 @@ func ScheduleHandler(c *gin.Context) {
 	c.Header("Content-Type", "application/json")
 
 	c.JSON(http.StatusOK, schedule)
+}
+
+// ScheduleHandler - Handles the /schedule api call
+func BingoHandler(c *gin.Context) {
+
+	bingoJson := utility.GetBingo()
+
+	c.Header("Content-Type", "application/json")
+
+	c.JSON(http.StatusOK, bingoJson)
 }
