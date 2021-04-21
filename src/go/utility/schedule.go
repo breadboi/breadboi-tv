@@ -7,7 +7,7 @@
  *
  */
 
-package main
+package utility
 
 import (
 	"encoding/json"

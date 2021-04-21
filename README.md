@@ -6,10 +6,10 @@ My personal website for all things streaming and social. You may view the live s
 
 - NPM
 - Go
-- Gulp
-- config.json ( For config.go )
+- config.json
 
 ## config.json
+Place a file named config.json in the project root.
 ```
 {
   "port" : <port>,
@@ -41,12 +41,9 @@ This file is saved in the uploaded-files directory and can be updated manually, 
 ```
 
 ## Getting Started
-
+I've created a simple bash script to build everything and generate a server executable in the project root. You may invoke it like so.
 ```bash
-> npm install
-> gulp babel
-> go get -d ./...
-> go run *.go
+> ./build.sh
 ```
 
 ## Contributing
