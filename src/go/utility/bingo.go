@@ -1,7 +1,7 @@
 /**
  * @file main.go
  * @author Brett Carney (brettcarney.com)
- * @brief Parses schedule json files
+ * @brief Interaction with bingo lockout endpoints
  * @version 1.0
  * @date 2020-02-19
  *
@@ -22,7 +22,7 @@ type Bingo []struct {
 	Colors string `json:"colors"`
 }
 
-// GetSchedule - Loads the configuration file from a path
+// GetBingo - Makes a request to bingosync and returns a Bingo object
 func GetBingo() Bingo {
 	var bingo Bingo
 
@@ -33,12 +33,6 @@ func GetBingo() Bingo {
 	}
 
 	defer bingoResponse.Body.Close()
-
-	// bingoBody, err := ioutil.ReadAll(bingoResponse.Body)
-
-	// if err != nil {
-	// 	fmt.Println(err.Error())
-	// }
 
 	jsonParser := json.NewDecoder(bingoResponse.Body)
 

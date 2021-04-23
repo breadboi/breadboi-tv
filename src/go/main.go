@@ -99,7 +99,7 @@ func ScheduleHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, schedule)
 }
 
-// ScheduleHandler - Handles the /schedule api call
+// BingoHandler - Handles the /bingo api call
 func BingoHandler(c *gin.Context) {
 
 	bingoJson := utility.GetBingo()

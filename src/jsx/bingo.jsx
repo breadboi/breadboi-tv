@@ -1,7 +1,7 @@
 /**
- * @file schedule.jsx
+ * @file bingo.jsx
  * @author Brett Carney (brettcarney.com)
- * @brief Represents the schedule content
+ * @brief Represents the bingo content
  * 
  * @version 1.0
  * @date 2021-02-09
@@ -37,7 +37,11 @@ class Bingo extends React.Component {
 
         var bingoSlot = this.state.bingoBoard.map(bingoItem => {
 
-            let bingoDiv = <div className={bingoItem.colors} id={bingoItem.slot}>{bingoItem.name}</div>;
+            let bingoDiv = (
+                <div className={bingoItem.colors + " col"} id={bingoItem.slot}>
+                    {bingoItem.name}
+                </div>
+                );
 
             return (
                 bingoDiv
@@ -49,8 +53,10 @@ class Bingo extends React.Component {
                 <div className="white-heading text-center">
                     <h1>Pokemon Lockout Bingo Board</h1>    
                 </div>
-                <div className="bingo-grid">
-                    {bingoSlot}
+                <div className="bingo-grid grid grid-pad">
+                    <div className="row row-cols-5 bingo-row">
+                        {bingoSlot}
+                    </div>
                 </div>
             </div>
         );
