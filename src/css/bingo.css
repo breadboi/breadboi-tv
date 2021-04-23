@@ -1,0 +1,194 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #3f2869;
+}
+
+/* Streams Styling */
+.bingo-section {
+    background-color: #a986ea;
+    font-size: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Bingo display */
+.bingo-grid {
+    /* grid-template-columns: repeat(5, minmax(100px, 1fr)); */
+    margin-top: 40px;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: #653fac;
+    border-radius: 5px;
+}
+
+.bingo-row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin: 25px;
+}
+
+/* Different Card Types */
+.blank {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: #333;
+    height: 125px;
+}
+
+.orange {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: orange;
+    width: 125px;
+    height: 125px;
+}
+
+.red {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: orangered;
+    width: 125px;
+    height: 125px;
+}
+
+.blue {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: lightskyblue;
+    width: 125px;
+    height: 125px;
+}
+
+.green {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: green;
+    width: 125px;
+    height: 125px;
+}
+
+.purple {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    border-width: 1px;
+    border-color: #fff;
+    background-color: rgb(155, 76, 155);
+    width: 125px;
+    height: 125px;
+}
+
+/* For Mobile Devices */
+@media (max-width: 834px) {
+    .bingo-row {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin: 9px;
+    }
+
+    .blank {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        border-width: 1px;
+        border-color: #fff;
+        background-color: #333;
+        height: 125px;
+    }
+
+    .orange {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        border-width: 1px;
+        border-color: #fff;
+        background-color: orange;
+        width: 125px;
+        height: 125px;
+    }
+
+    .red {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        border-width: 1px;
+        border-color: #fff;
+        background-color: orangered;
+        width: 125px;
+        height: 125px;
+    }
+
+    .blue {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        border-width: 1px;
+        border-color: #fff;
+        background-color: lightskyblue;
+        width: 125px;
+        height: 125px;
+    }
+
+    .green {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        border-width: 1px;
+        border-color: #fff;
+        background-color: green;
+        width: 125px;
+        height: 125px;
+    }
+
+    .purple {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        border-width: 1px;
+        border-color: #fff;
+        background-color: rgb(155, 76, 155);
+        width: 125px;
+        height: 125px;
+    }
+}
