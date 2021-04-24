@@ -50,6 +50,9 @@ func SetupRouter() *gin.Engine {
 	// Serve pokemon
 	router.StaticFile("/schedule", "public/views/schedule.html")
 
+	// Serve pokemon
+	router.StaticFile("/shinylocke", "public/views/shinylocke.html")
+
 	api := router.Group("/api")
 	{
 		api.GET("/", func(c *gin.Context) {
