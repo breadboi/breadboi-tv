@@ -1,0 +1,37 @@
+/* Colors */
+/* 545e75 */
+/* 63adf2 */
+/* a7cced */
+/* 304d6d */
+/* 82a0bc */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #653fac;
+}
+
+/* Streams Styling */
+.stream-section {
+  background-color: #653fac;
+  margin-top: 50px;
+  font-size: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.streams-row {
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 50px;
+}
+
+.stream-card {
+  margin-bottom: 30px;
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
