@@ -101,10 +101,10 @@ class Streams extends React.Component {
                                             </div>
                                         </div>
 
-                                        <a class="carousel-control-prev" data-target="#myCarousel" data-slide="prev">
+                                        <a class="carousel-control carousel-control-prev" data-target="#myCarousel" data-slide="prev">
                                             <span class="carousel-control-prev-icon"></span>
                                         </a>
-                                        <a class="carousel-control-next" data-target="#myCarousel" data-slide="next">
+                                        <a class="carousel-control carousel-control-next" data-target="#myCarousel" data-slide="next">
                                             <span class="carousel-control-next-icon"></span>
                                         </a>
                                     </div>
