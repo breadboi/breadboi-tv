@@ -54,9 +54,29 @@ class Schedule extends React.Component {
             return currentTime.isBetween(initialTime, endTime);
         }
 
+        /**
+         * Check if the current time is after the endtime of a stream.
+         * @param {string} startTime String should be in this format YYYY-MM-DD h:mm:ss a
+         * @param {string} duration String should be in this format hh:mm:ss
+         */
+        function isAfterTimeSlot(startTime, duration) {
+            var currentTime = moment().tz(moment.tz.guess());
+            var initialTime = moment.tz(startTime, 'YYYY-MM-DD h:mm:ss a', 'America/Chicago');
+            var endTime = moment(initialTime);
+            endTime.add(duration, 'hours');
+
+            return currentTime.isAfter(endTime);
+        }
+
         var scheduledGames = this.state.streamSchedule.map(currentDay => {
+            let trClasses = "";
+            let withinTimeClass = isWithinTimeSlot(currentDay.Date, currentDay.Duration) ? "current-timeslot" : "timeslot";
+            let afterTimeClass = isAfterTimeSlot(currentDay.Date, currentDay.Duration) ? " d-none" : "";
+
+            trClasses = withinTimeClass + afterTimeClass;
+
             return (
-                <tr className={isWithinTimeSlot(currentDay.Date, currentDay.Duration) ? "current-timeslot" : "timeslot"}>
+                <tr className={trClasses}>
                     <td>{convertUTCToLocal(currentDay.Date).format('MMM DD')}</td>
                     <td>{currentDay.Title}</td>
                     <td>{currentDay.GameType}</td>
