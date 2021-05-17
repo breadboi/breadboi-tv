@@ -7,6 +7,9 @@
  * 
  */
 
+var ReactDOM = require('react-dom');
+var React = require('react');
+
 class Header extends React.Component {
   render() {
     return (
@@ -36,8 +39,8 @@ class Header extends React.Component {
 
         <div className="row text-center">
           <div className="col">
-            <a href="https://www.twitch.tv/products/imbreadboi" target="_blank" class="btn btn-lg white-heading" title="Subscribe">
-              <i class="zmdi zmdi-twitch white-heading"></i> Consider Subscribing
+            <a href="https://www.twitch.tv/products/imbreadboi" target="_blank" className="btn btn-lg white-heading" title="Subscribe">
+              <i className="zmdi zmdi-twitch white-heading"></i> Consider Subscribing
             </a>
           </div>
         </div>

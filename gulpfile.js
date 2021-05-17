@@ -1,6 +1,25 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 const minify = require('gulp-minify');
+var merge = require('merge-stream');
+var glob = require('glob');
+var browserify = require('browserify');
+var reactify = require('reactify');
+var source = require('vinyl-source-stream');
+var path = require('path');
+
+gulp.task("bundle", function () {
+  var files = glob.sync('./src/jsx/*.jsx');
+  return merge(files.map(function(file) {
+    return browserify({
+        entries: file,
+        debug: true
+    }).transform(reactify)
+        .bundle()
+        .pipe(source(path.basename(file, '.jsx') + ".js"))
+        .pipe(gulp.dest("public/js"))
+  }));
+});
 
 /**
  * Convert jsx to js
@@ -9,22 +28,6 @@ gulp.task('babel', function() {
     return gulp.src("src/jsx/*.jsx")
         .pipe(babel())
         .pipe(gulp.dest("src/react-js/"));
-});
-
-/**
- * Move moment js scripts
- */
-gulp.task('moment', function() {
-    return gulp.src("node_modules/moment/min/moment.min.js")
-        .pipe(gulp.dest("public/vendor/"));
-});
-
-/**
- * Move moment timezone scripts
- */
-gulp.task('moment-tz', function() {
-    return gulp.src("node_modules/moment-timezone/moment-timezone.js")
-        .pipe(gulp.dest("public/vendor/"));
 });
 
 /**
@@ -52,42 +55,15 @@ gulp.task('assets', function() {
 })
 
 /**
- * Minify react js files
- */
-gulp.task('minify-react', function() {
-    return gulp.src("src/react-js/*.js")
-        .pipe(minify({noSource: true}))
-        .pipe(gulp.dest("public/js/"))
-});
-
-/**
  * Minify js files
  */
 gulp.task('minify-js', function() {
-    return gulp.src("src/js/*.js")
+    return gulp.src("public/js/*.js")
         .pipe(minify({noSource: true}))
-        .pipe(gulp.dest("public/js/"))
+        .pipe(gulp.dest("public/js/min"))
 });
-
-/**
- * Minify all js and react-js
- */
-gulp.task("minify-all", gulp.series('minify-react', 'minify-js'));
-
-/**
- * Copy regular js to public
- */
-gulp.task('copy-js', function() {
-    return gulp.src("src/js/*.js")
-        .pipe(gulp.dest("public/js/"));
-});
-
-/**
- * Build with all src unminified
- */
-gulp.task('build-debug', gulp.series('babel', 'copy-js', 'moment', 'moment-tz'));
 
 /**
  * Build with all src minified
  */
-gulp.task('build-release', gulp.series('babel', 'minify-all', 'moment', 'moment-tz', 'assets', 'css', 'views'));
+gulp.task('build', gulp.series('bundle', 'minify-js', 'assets', 'css', 'views'));

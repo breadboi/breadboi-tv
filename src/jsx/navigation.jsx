@@ -8,6 +8,9 @@
  * 
  */
 
+var ReactDOM = require('react-dom');
+var React = require('react');
+
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
@@ -37,8 +40,8 @@ class Navigation extends React.Component {
         var navbarItems = this.state.pages.map(page => {
 
             let navbarLink = (
-                <li class="nav-item">
-                    <a class="nav-link" href={page.location}>{page.name}</a>
+                <li key={page.name} className="nav-item">
+                    <a className="nav-link" href={page.location}>{page.name}</a>
                 </li>
             );
 
@@ -48,12 +51,12 @@ class Navigation extends React.Component {
         });
 
         return (
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <img id="navbarIcon" src="public/assets/channel-logo-icon.png" alt="Home"></img>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarToggle">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <div className="collapse navbar-collapse" id="navbarToggle">
+                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         {navbarItems}
                     </ul>
                 </div>

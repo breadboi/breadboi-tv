@@ -38,6 +38,9 @@ func SetupRouter() *gin.Engine {
 	// Serve resources
 	router.Static("/public", "public")
 
+	// Serve favicon
+	router.StaticFile("/favicon.ico", "public/assets/favicon.ico")
+
 	// Serve homepage
 	router.StaticFile("/", "public/views/home.html")
 
