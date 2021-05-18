@@ -8,6 +8,9 @@
  * 
  */
 
+var ReactDOM = require('react-dom');
+var React = require('react');
+
 class Bingo extends React.Component {
     constructor(props) {
         super(props);
@@ -38,7 +41,7 @@ class Bingo extends React.Component {
         var bingoSlot = this.state.bingoBoard.map(bingoItem => {
 
             let bingoDiv = (
-                <div className={bingoItem.colors + " col"} id={bingoItem.slot}>
+                <div key={bingoItem.slot} className={bingoItem.colors + " col"} id={bingoItem.slot}>
                     {bingoItem.name}
                 </div>
                 );

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build frontend files
-npx gulp build-release;
+npx gulp build;
 
 # Build backend files
 cd src/go/;

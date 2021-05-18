@@ -8,6 +8,11 @@
  * 
  */
 
+var ReactDOM = require('react-dom');
+var React = require('react');
+var moment = require('moment');
+require("moment-timezone");
+
 class Schedule extends React.Component {
     constructor(props) {
         super(props);
@@ -76,11 +81,11 @@ class Schedule extends React.Component {
             trClasses = withinTimeClass + afterTimeClass;
 
             return (
-                <tr className={trClasses}>
+                <tr key={currentDay.Date} className={trClasses}>
                     <td>{convertUTCToLocal(currentDay.Date).format('MMM DD')}</td>
                     <td>{currentDay.Title}</td>
                     <td>{currentDay.GameType}</td>
-                    <td> <i class="fa fa-clock-o" aria-hidden="true"></i> {currentDay.Duration} </td>
+                    <td> <i className="fa fa-clock-o" aria-hidden="true"></i> {currentDay.Duration} </td>
                     <td> {convertUTCToLocal(currentDay.Date).format('hh:mm A z')} </td>
                     <td>{currentDay.Description}</td>
                 </tr>

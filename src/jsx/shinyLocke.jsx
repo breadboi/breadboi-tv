@@ -8,6 +8,9 @@
  * 
  */
 
+var ReactDOM = require('react-dom');
+var React = require('react');
+
 class Streams extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +44,7 @@ class Streams extends React.Component {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="card bg-dark shadow stream-card">
                                 <div className="card-body">
-                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.breadboi.channel + "&parent=" + location.hostname} frameborder="0" allowfullscreen="true" scrolling="no" height="500" width="100%"></iframe>
+                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.breadboi.channel + "&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +52,7 @@ class Streams extends React.Component {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="card bg-dark shadow stream-card">
                                 <div className="card-body">
-                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.pickels.channel + "&parent=" + location.hostname} frameborder="0" allowfullscreen="true" scrolling="no" height="500" width="100%"></iframe>
+                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.pickels.channel + "&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +60,7 @@ class Streams extends React.Component {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="card bg-dark shadow stream-card">
                                 <div className="card-body">
-                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.meech.channel + "&parent=" + location.hostname} frameborder="0" allowfullscreen="true" scrolling="no" height="500" width="100%"></iframe>
+                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.meech.channel + "&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -65,15 +68,15 @@ class Streams extends React.Component {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="card bg-dark shadow stream-card">
                                 <div className="card-body">
-                                    <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <div id="myCarousel" className="carousel slide" data-interval="false" data-ride="carousel">
+                                        <ol className="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
                                             <li data-target="#myCarousel" data-slide-to="1"></li>
                                             <li data-target="#myCarousel" data-slide-to="2"></li>
                                         </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <iframe frameborder="0"
+                                        <div className="carousel-inner">
+                                            <div className="carousel-item active">
+                                                <iframe frameBorder="0"
                                                     scrolling="no"
                                                     id="chat_embed"
                                                     src={"https://www.twitch.tv/embed/" + this.state.breadboi.channel + "/chat?parent=" + location.hostname}
@@ -81,8 +84,8 @@ class Streams extends React.Component {
                                                     width="100%">
                                                 </iframe>
                                             </div>
-                                            <div class="carousel-item">
-                                                <iframe frameborder="0"
+                                            <div className="carousel-item">
+                                                <iframe frameBorder="0"
                                                     scrolling="no"
                                                     id="chat_embed"
                                                     src={"https://www.twitch.tv/embed/" + this.state.pickels.channel + "/chat?parent=" + location.hostname}
@@ -90,8 +93,8 @@ class Streams extends React.Component {
                                                     width="100%">
                                                 </iframe>
                                             </div>
-                                            <div class="carousel-item">
-                                                <iframe frameborder="0"
+                                            <div className="carousel-item">
+                                                <iframe frameBorder="0"
                                                     scrolling="no"
                                                     id="chat_embed"
                                                     src={"https://www.twitch.tv/embed/" + this.state.meech.channel + "/chat?parent=" + location.hostname}
@@ -101,11 +104,11 @@ class Streams extends React.Component {
                                             </div>
                                         </div>
 
-                                        <a class="carousel-control carousel-control-prev" data-target="#myCarousel" data-slide="prev">
-                                            <span class="carousel-control-prev-icon"></span>
+                                        <a className="carousel-control carousel-control-prev" data-target="#myCarousel" data-slide="prev">
+                                            <span className="carousel-control-prev-icon"></span>
                                         </a>
-                                        <a class="carousel-control carousel-control-next" data-target="#myCarousel" data-slide="next">
-                                            <span class="carousel-control-next-icon"></span>
+                                        <a className="carousel-control carousel-control-next" data-target="#myCarousel" data-slide="next">
+                                            <span className="carousel-control-next-icon"></span>
                                         </a>
                                     </div>
 
