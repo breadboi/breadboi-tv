@@ -14,7 +14,7 @@ gulp.task("bundle", function () {
     return browserify({
         entries: file,
         debug: true
-    }).transform(reactify)
+    }).transform('babelify', {presets: ['@babel/preset-env', '@babel/preset-react']})
         .bundle()
         .pipe(source(path.basename(file, '.jsx') + ".js"))
         .pipe(gulp.dest("public/js"))

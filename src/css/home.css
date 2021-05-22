@@ -9,6 +9,7 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
+  background-color: #3f2869;
 }
 
 /* Profile Picture Styling */
@@ -57,8 +58,7 @@ body {
 
 /* Streams Styling */
 .stream-section {
-  background-color: #653fac;
-  margin-top: 50px;
+  background-color: #ffeed7;
   font-size: 25px;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -68,112 +68,4 @@ body {
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 50px;
-}
-
-/* Links Styling */
-.links-section {
-  background-color: #6342a1;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.links-section-a {
-  outline: none;
-  text-decoration: none;
-}
-
-
-/* Handle smaller screen sizes */
-@media only screen and (max-width: 600px) {
-  .link-section-icon {
-    color: white;
-    background-color: #421b8a;
-    border-radius: 10px;
-    font-size: 20vw !important;
-    width: 80%;
-  }
-}
-
-.link-section-icon {
-  color: white;
-  background-color: #421b8a;
-  border-radius: 10px;
-  font-size: 10vw !important;
-  width: 50%;
-}
-
-.link-section-icon:hover {
-  color: #6421e0;
-  background-color: white;
-  border-radius: 10px;
-  font-size: 10vw !important;
-  width: 50%;
-  transition: background-color 0.5s ease-out;
-}
-
-.link-section-icon:active {
-  color: #9667ec;
-  background-color: white;
-  border-radius: 10px;
-  font-size: 10vw !important;
-  width: 50%;
-  transition: background-color 0.5s ease-out;
-}
-
-/* General Styling for the Main Landing Page */
-body {
-  background-color: #3f2869;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a.white {
-  color: #FFF;
-}
-
-.btn i.zmdi {
-  margin-right: 3px;
-}
-
-i.fa,
-a,
-a:hover {
-  color: #583b8f;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-
-  font-family: "Roboto";
-  font-weight: 400;
-  line-height: 1.33;
-  border-radius: 6px;
-  border: solid 2px #6441a5;
-  background: transparent;
-  text-align: center;
-  transition: all .3s ease-in-out;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #6c47b1;
-  color: #FFF;
-  text-decoration: none;
-}
-
-.btn-lg {
-  padding: 18px 27px;
-  font-size: 20px;
-}
-
-.btn-sm {
-  padding: 14px 18px;
-  font-size: 16px;
 }
