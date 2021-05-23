@@ -32,25 +32,35 @@ const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
+    appBar: {
+        backgroundColor: "#f17f00",
+    },
+    textOnLight: {
+        color: "#3d1500",
+        fontWeight: "bold",
+    }
 }));
 
-export default function ButtonAppBar({ pages }) {
+export default function ButtonAppBar({ pages, pagesArray }) {
     const classes = useStyles();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
+    // On click handler for the hamburger menu
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
+    // Handler for closing the hamburger menu
     const handleClose = () => {
         setAnchorEl(null);
     };
 
-    var navbarItems = pages.map(page => {
+    // Create menu items from the pages array
+    var navbarItems = pagesArray.map(page => {
 
         let navbarLink = (
-            <MenuItem onClick={handleClose} component={Link} href={page.location}>
+            <MenuItem key={page.location} onClick={handleClose} component={Link} href={page.location}>
                 {page.name}
             </MenuItem>
         );
@@ -60,12 +70,20 @@ export default function ButtonAppBar({ pages }) {
         );
     });
 
+    const pageUrl = window.location.href;
+    // Get the page title
+    const matchedPage = () => {
+        let matchedString = pageUrl.match("[^\/]+(?=\/$|$)")[0];
+        let formattedTitle = pages[matchedString] !== undefined ? pages[matchedString].name : pages["home"].name;
+        return formattedTitle;
+    }
+
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar className={`${classes.appBar} ${classes.textOnLight}`} position="static">
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} />
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={handleClick}>
+                        <MenuIcon aria-controls="simple-menu" aria-haspopup="true" />
                     </IconButton>
                     <Menu
                         id="simple-menu"
@@ -77,10 +95,10 @@ export default function ButtonAppBar({ pages }) {
                         {navbarItems}
                     </Menu>
 
-                    <Typography variant="h6" className={classes.title}>
-                        News
+                    <Typography variant="h6" className={`${classes.title} ${classes.textOnLight}`}>
+                        {matchedPage()}
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
             </AppBar>
         </div>
@@ -92,7 +110,25 @@ class Navigation extends React.Component {
         super(props);
         this.state = {
             collapse1: '',
-            pages: [
+            pages: {
+                "home": {
+                    name: "Home",
+                    location: "/"
+                },
+                "schedule": {
+                    name: "Schedule",
+                    location: "/schedule"
+                },
+                "pokemon": {
+                    name: "Pokemon",
+                    location: "/pokemon"
+                },
+                "shinylocke": {
+                    name: "Shinylocke",
+                    location: "/shinylocke"
+                }
+            },
+            pagesArray: [
                 {
                     name: "Home",
                     location: "/"
@@ -108,13 +144,14 @@ class Navigation extends React.Component {
                 {
                     name: "Shinylocke",
                     location: "/shinylocke"
-                }]
+                }
+            ]
         };
     }
 
     render() {
         return (
-            <ButtonAppBar pages={this.state.pages}></ButtonAppBar>
+            <ButtonAppBar pages={this.state.pages} pagesArray={this.state.pagesArray}></ButtonAppBar>
         );
     }
 }

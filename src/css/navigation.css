@@ -1,0 +1,8 @@
+/* Prevent weird border in firefox */
+button::-moz-focus-inner { 
+    border: 0; 
+}
+
+button:focus {
+    outline: 0px;
+}
