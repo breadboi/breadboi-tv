@@ -52,7 +52,7 @@ class Stream extends React.Component {
         return (
 
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div className="card bg-dark shadow stream-card">
+                <div className="card shadow card-item-dark">
                     <div className="card-body">
                         <iframe src={"https://player.twitch.tv/?channel=" + this.props.stream + "&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="100%"></iframe>
                         <iframe frameBorder="0"

@@ -21,7 +21,7 @@ class MainContent extends React.Component {
 
                         {/* Stream Card */}
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                            <div className="card card-item shadow stream-card content-item">
+                            <div className="card card-item-dark shadow content-item">
                                 <div className="card-body">
                                     <iframe src={"https://player.twitch.tv/?channel=imbreadboi&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="100%"></iframe>
                                     <iframe frameBorder="0"
@@ -37,7 +37,7 @@ class MainContent extends React.Component {
 
                         {/* Twitter Card */}
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                            <div className="card card-item shadow stream-card content-item">
+                            <div className="card card-item-dark shadow content-item">
                                 <div className="card-body">
                                     <a className="twitter-timeline content-item" data-height="890px" href="https://twitter.com/bread_and_boi?ref_src=twsrc%5Etfw"></a>
                                 </div>

@@ -1,13 +1,6 @@
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-    background-color: #3f2869;
-}
-
-/* Streams Styling */
+/* Schedule Page Styling */
 .schedule-section {
-    background-color: #653fac;
+    background-color: #ffeed7;
     margin-top: 50px;
     font-size: 25px;
     padding-top: 50px;

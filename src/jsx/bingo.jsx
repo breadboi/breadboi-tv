@@ -41,7 +41,7 @@ class Bingo extends React.Component {
         var bingoSlot = this.state.bingoBoard.map(bingoItem => {
 
             let bingoDiv = (
-                <div key={bingoItem.slot} className={bingoItem.colors + " col"} id={bingoItem.slot}>
+                <div key={bingoItem.slot} className={bingoItem.colors + " col bingo-cell"} id={bingoItem.slot}>
                     {bingoItem.name}
                 </div>
                 );
@@ -53,8 +53,8 @@ class Bingo extends React.Component {
 
         return (
             <div className="bingo-section">
-                <div className="white-heading text-center">
-                    <h1>Pokemon Lockout Bingo Board</h1>    
+                <div className="bread-dark bingo-title text-center">
+                    <div>Pokemon Lockout Bingo Board</div>    
                 </div>
                 <div className="bingo-grid grid grid-pad">
                     <div className="row row-cols-5 bingo-row">

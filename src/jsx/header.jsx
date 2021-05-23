@@ -23,7 +23,7 @@ class Header extends React.Component {
 
         <div className="row text-center">
           <div className="col">
-            <div className="white-heading">
+            <div className="bread-dark">
               <h1>Bread boi</h1>
             </div>
           </div>
@@ -31,7 +31,7 @@ class Header extends React.Component {
 
         <div className="row text-center">
           <div className="col">
-            <div className="white-heading">
+            <div className="bread-dark">
               <h2>Twitch Streamer</h2>
             </div>
           </div>
@@ -39,8 +39,8 @@ class Header extends React.Component {
 
         <div className="row text-center">
           <div className="col">
-            <a href="https://www.twitch.tv/products/imbreadboi" target="_blank" className="btn btn-lg white-heading" title="Subscribe">
-              <i className="zmdi zmdi-twitch white-heading"></i> Consider Subscribing
+            <a href="https://www.twitch.tv/products/imbreadboi" target="_blank" className="btn btn-lg bread-dark" title="Subscribe">
+              <i className="zmdi zmdi-twitch bread-dark"></i> Consider Subscribing
             </a>
           </div>
         </div>
