@@ -94,6 +94,11 @@ class Schedule extends React.Component {
 
         return (
             <div className="schedule-section">
+
+                <div className="bread-dark schedule-title text-center">
+                    <div>Stream Schedule</div>
+                </div>
+
                 <div className="container text-center">
                     <h4 className="text-gdq-black well ">All start times below are converted to your local time<span id="offset-detected"> ({moment.tz.guess()})</span>.</h4>
                 </div>

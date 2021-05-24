@@ -1,10 +1,15 @@
-/* Streams Styling */
+/* Shinylocke Styling */
 .stream-section {
   background-color: #ffeed7;
-  margin-top: 50px;
+  margin-top: 10px;
   font-size: 25px;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.shinylocke-title {
+  font-weight: bold;
+  font-size: 35px;
 }
 
 .streams-row {

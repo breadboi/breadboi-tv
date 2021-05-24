@@ -44,6 +44,16 @@ class MainContent extends React.Component {
                             </div>
                         </div>
 
+                        {/* Youtube */}
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div className="card card-item-dark shadow content-item">
+                                <div className="card-body">
+                                    <iframe width="100%" height="720" src="https://www.youtube.com/embed?listType=user_uploads&list=bcash6911" allowFullScreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
 
                 </div>
