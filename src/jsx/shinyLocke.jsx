@@ -11,25 +11,24 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
 
-class Streams extends React.Component {
+import Navigation from "./navigation.jsx";
+
+class Shinylocke extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             breadboi: {
                 channel: 'imbreadboi',
-                host: '71.201.181.148',
-                port: '3001'
+                host: '71.201.181.148'
             },
             pickels: {
                 channel: 'pickels1481',
-                host: '71.201.181.148',
-                port: '3001'
+                host: '71.201.181.148'
             },
             meech: {
                 channel: 'thatboymeech',
-                host: '71.201.181.148',
-                port: '3001'
+                host: '71.201.181.148'
             }
         };
     }
@@ -125,4 +124,4 @@ class Streams extends React.Component {
     }
 }
 
-ReactDOM.render(<Streams />, document.getElementById("streams"));
+ReactDOM.render(<div><Navigation /><Shinylocke /></div>, document.getElementById("shinylocke"));

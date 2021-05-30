@@ -11,7 +11,10 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
 
-class Streams extends React.Component {
+import Navigation from './navigation.jsx';
+import Bingo from './bingo.jsx';
+
+class Pokemon extends React.Component {
     constructor(props) {
         super(props);
 
@@ -74,4 +77,4 @@ class Streams extends React.Component {
     }
 }
 
-ReactDOM.render(<Streams />, document.getElementById("streams"));
+ReactDOM.render(<div><Navigation /><Bingo /><Pokemon /></div>, document.getElementById("pokemon"));

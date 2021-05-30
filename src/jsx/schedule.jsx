@@ -10,6 +10,9 @@
 
 var ReactDOM = require('react-dom');
 var React = require('react');
+
+import Navigation from './navigation.jsx';
+
 var moment = require('moment');
 require("moment-timezone");
 
@@ -124,4 +127,4 @@ class Schedule extends React.Component {
 }
 
 
-ReactDOM.render(<Schedule />, document.getElementById("schedule"));
+ReactDOM.render(<div><Navigation /><Schedule /></div>, document.getElementById("schedule"));

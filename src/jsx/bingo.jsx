@@ -8,10 +8,9 @@
  * 
  */
 
-var ReactDOM = require('react-dom');
 var React = require('react');
 
-class Bingo extends React.Component {
+export default class Bingo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -65,5 +64,3 @@ class Bingo extends React.Component {
         );
     }
 }
-
-ReactDOM.render(<Bingo />, document.getElementById("bingo"));

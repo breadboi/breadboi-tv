@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Breadfont';
+  src: url(../assets/BebasNeue-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Breadfont';
+  src: url(../assets/BebasNeue-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
 html,
 body {
     max-width: 100%;
