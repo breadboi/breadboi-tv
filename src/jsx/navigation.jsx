@@ -58,7 +58,13 @@ const useStyles = makeStyles({
         textTransform: `uppercase`,
         color: `#3D1500`,
         fontWeight: `bold`,
-        fontSize: `31px`
+        fontSize: `31px`,
+        '&:hover': {
+            color: "#FFEED7",
+        },
+        '&:click': {
+            color: "#00BAF0",
+        }
     },
     list: {
         width: 250
@@ -77,7 +83,9 @@ const Header = () => {
             <Toolbar>
                 <Container maxWidth={false} className={classes.navbarDisplayFlex}>
                     <IconButton edge="start" color="inherit" aria-label="home">
-                        <img src="public/assets/channel-logo-icon.png" width="50px"></img>
+                        <a href={navLinks[0].path} key={navLinks[0].title}>
+                            <img src="public/assets/channel-logo-icon.png" width="50px"></img>
+                        </a>
                     </IconButton>
 
                     {/* Hide on Desktop */}
