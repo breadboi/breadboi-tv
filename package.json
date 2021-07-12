@@ -1,45 +1,5 @@
 {
-  "name": "breadboi-tv",
-  "version": "1.0.0",
-  "description": "Public Streaming Website",
-  "main": "src/js/index.js",
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33",
-    "query-string": "^6.13.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-twitter-widgets": "^1.10.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "babel-preset-react": "^6.24.1",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "glob": "^7.1.7",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-minify": "^3.1.0",
-    "merge-stream": "^2.0.0",
-    "path": "^0.12.7",
-    "reactify": "^1.1.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/breadboi/breadboi-tv.git"
-  },
-  "author": "Brett Carney",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/breadboi/breadboi-tv/issues"
-  },
-  "homepage": "https://github.com/breadboi/breadboi-tv#readme"
+    "react-router-dom": "^5.2.0"
+  }
 }

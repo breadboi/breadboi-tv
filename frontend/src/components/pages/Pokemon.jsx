@@ -7,14 +7,11 @@
  * @date 2020-02-19
  * 
  */
+import Bingo from '../displays/Bingo';
 
-var ReactDOM = require('react-dom');
 var React = require('react');
 
-import Navigation from './navigation.jsx';
-import Bingo from './bingo.jsx';
-
-class Pokemon extends React.Component {
+export default class Pokemon extends React.Component {
     constructor(props) {
         super(props);
 
@@ -42,11 +39,11 @@ class Pokemon extends React.Component {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="card shadow card-item-dark">
                                 <div className="card-body">
-                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.breadboi.channel + "&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
-                                    <iframe frameBorder="0"
+                                    <iframe title={this.state.breadboi} src={"https://player.twitch.tv/?channel=" + this.state.breadboi.channel + "&parent=" + window.location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
+                                    <iframe title={this.state.breadboi} frameBorder="0"
                                         scrolling="no"
                                         id="chat_embed"
-                                        src={"https://www.twitch.tv/embed/" + this.state.breadboi.channel + "/chat?parent=" + location.hostname}
+                                        src={"https://www.twitch.tv/embed/" + this.state.breadboi.channel + "/chat?parent=" + window.location.hostname}
                                         height="500"
                                         width="100%">
                                     </iframe>
@@ -57,11 +54,11 @@ class Pokemon extends React.Component {
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="card shadow card-item-dark">
                                 <div className="card-body">
-                                    <iframe src={"https://player.twitch.tv/?channel=" + this.state.pickels.channel + "&parent=" + location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
-                                    <iframe frameBorder="0"
+                                    <iframe title={this.state.pickels} src={"https://player.twitch.tv/?channel=" + this.state.pickels.channel + "&parent=" + window.location.hostname} frameBorder="0" allowFullScreen={true} scrolling="no" height="500" width="100%"></iframe>
+                                    <iframe title={this.state.pickels}frameBorder="0"
                                         scrolling="no"
                                         id="chat_embed"
-                                        src={"https://www.twitch.tv/embed/" + this.state.pickels.channel + "/chat?parent=" + location.hostname}
+                                        src={"https://www.twitch.tv/embed/" + this.state.pickels.channel + "/chat?parent=" + window.location.hostname}
                                         height="500"
                                         width="100%">
                                     </iframe>
@@ -71,10 +68,10 @@ class Pokemon extends React.Component {
 
                     </div>
                 </div>
+
+                <Bingo></Bingo>
             </div>
 
         );
     }
 }
-
-ReactDOM.render(<div><Navigation /><Bingo /><Pokemon /></div>, document.getElementById("pokemon"));

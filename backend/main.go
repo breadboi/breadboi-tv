@@ -35,27 +35,6 @@ func SetupRouter() *gin.Engine {
 
 	router := gin.Default()
 
-	// Serve resources
-	router.Static("/public", "public")
-
-	// Serve favicon
-	router.StaticFile("/favicon.ico", "public/assets/favicon.ico")
-
-	// Serve homepage
-	router.StaticFile("/", "public/views/home.html")
-
-	// Serve squad
-	router.StaticFile("/squad", "public/views/squad.html")
-
-	// Serve pokemon
-	router.StaticFile("/pokemon", "public/views/pokemon.html")
-
-	// Serve pokemon
-	router.StaticFile("/schedule", "public/views/schedule.html")
-
-	// Serve pokemon
-	router.StaticFile("/shinylocke", "public/views/shinylocke.html")
-
 	api := router.Group("/api")
 	{
 		api.GET("/", func(c *gin.Context) {

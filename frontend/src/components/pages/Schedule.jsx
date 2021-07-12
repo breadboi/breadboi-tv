@@ -7,16 +7,13 @@
  * @date 2021-02-09
  * 
  */
-
-var ReactDOM = require('react-dom');
+import '../../css/schedule.css';
 var React = require('react');
-
-import Navigation from './navigation.jsx';
 
 var moment = require('moment');
 require("moment-timezone");
 
-class Schedule extends React.Component {
+export default class Schedule extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -125,6 +122,3 @@ class Schedule extends React.Component {
         );
     }
 }
-
-
-ReactDOM.render(<div><Navigation /><Schedule /></div>, document.getElementById("schedule"));

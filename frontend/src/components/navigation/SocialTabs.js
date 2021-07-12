@@ -8,11 +8,6 @@
  * 
  */
 
-var ReactDOM = require('react-dom');
-var React = require('react');
-
-import Navigation from './navigation.jsx';
-
 import { makeStyles } from "@material-ui/core";
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -23,6 +18,7 @@ import Box from '@material-ui/core/Box';
 import Hidden from "@material-ui/core/Hidden";
 
 import { Timeline } from 'react-twitter-widgets';
+var React = require('react');
 
 /* Styling for MUI Components */
 const useStyles = makeStyles({
@@ -93,7 +89,8 @@ const SocialTabs = () => {
             <TabPanel value={value} index={0}>
                 {/* Stream Card */}
                 <iframe
-                    src={"https://player.twitch.tv/?channel=imbreadboi&parent=" + location.hostname}
+                    title="imbreadboi-player"
+                    src={"https://player.twitch.tv/?channel=imbreadboi&parent=" + window.location.hostname}
                     frameBorder="0"
                     allowFullScreen={true}
                     scrolling="no"
@@ -101,10 +98,11 @@ const SocialTabs = () => {
                     width="100%"></iframe>
                 <Hidden smDown>
                     <iframe
+                        title="imbreadboi-chat"
                         frameBorder="0"
                         scrolling="no"
                         id="chat_embed"
-                        src={"https://www.twitch.tv/embed/imbreadboi/chat?parent=" + location.hostname}
+                        src={"https://www.twitch.tv/embed/imbreadboi/chat?parent=" + window.location.hostname}
                         height="500px"
                         width="100%">
                     </iframe>
@@ -142,23 +140,15 @@ const SocialTabs = () => {
 
             <TabPanel value={value} index={2}>
                 {/* Youtube */}
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed?listType=user_uploads&list=bcash6911" allowFullScreen></iframe>
+                <iframe title="youtube-player" 
+                        width="100%"
+                        height="500"
+                        src="https://www.youtube.com/embed?listType=user_uploads&list=bcash6911" 
+                        allowFullScreen
+                ></iframe>
             </TabPanel>
         </div>
     );
 }
 
-class Home extends React.Component {
-    render() {
-        return (
-            <SocialTabs></SocialTabs>
-        );
-    }
-}
-
-ReactDOM.render(
-    <div>
-        <Navigation />
-        <Home />
-    </div>
-    , document.getElementById("home"));
+export default SocialTabs;
