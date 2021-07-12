@@ -9,7 +9,7 @@ My personal website for all things streaming and social. You may view the live s
 - config.json
 
 ## config.json
-Place a file named config.json in the project root.
+Place a file named config.json in backend/.
 ```
 {
   "port" : <port>,
@@ -18,7 +18,7 @@ Place a file named config.json in the project root.
 }
 ```
 ## schedule.json
-This file is saved in the uploaded-files directory and can be updated manually, or via the /uploadschedule api. Below is an example of a json body you can use. Also note, you need to create an api key in your config.json to use this api and send the key with the "api-key" header.
+This file is saved in the backend/uploaded-files directory and can be updated manually, or via the /uploadschedule api. Below is an example of a json body you can use. Also note, you need to create an api key in your config.json to use this api and send the key with the "api-key" header.
 ```
 {
   "Days": [
